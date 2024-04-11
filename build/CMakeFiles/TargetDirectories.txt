@@ -1,0 +1,4 @@
+/home/dmz/Baidu/convex_generation/build/CMakeFiles/generate_convex.dir
+/home/dmz/Baidu/convex_generation/build/CMakeFiles/gtest.dir
+/home/dmz/Baidu/convex_generation/build/CMakeFiles/edit_cache.dir
+/home/dmz/Baidu/convex_generation/build/CMakeFiles/rebuild_cache.dir

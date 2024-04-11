@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -fopenmp CMakeFiles/generate_convex.dir/src/main.cpp.o CMakeFiles/generate_convex.dir/src/calculate_convex.cpp.o CMakeFiles/generate_convex.dir/src/road_data.cpp.o -o generate_convex 

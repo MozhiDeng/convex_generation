@@ -1,0 +1,70 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-kHIM9F
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_c16e8/fast && make[3]: Entering directory '/home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-kHIM9F'
+/usr/bin/make  -f CMakeFiles/cmTC_c16e8.dir/build.make CMakeFiles/cmTC_c16e8.dir/build
+make[4]: Entering directory '/home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-kHIM9F'
+Building C object CMakeFiles/cmTC_c16e8.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_c16e8.dir/src.c.o -c /home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-kHIM9F/src.c
+Linking C executable cmTC_c16e8
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c16e8.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_c16e8.dir/src.c.o -o cmTC_c16e8 
+CMakeFiles/cmTC_c16e8.dir/src.c.o: In function `main':
+src.c:(.text+0x3e): undefined reference to `pthread_create'
+src.c:(.text+0x4a): undefined reference to `pthread_detach'
+src.c:(.text+0x56): undefined reference to `pthread_cancel'
+src.c:(.text+0x67): undefined reference to `pthread_join'
+src.c:(.text+0x7b): undefined reference to `pthread_atfork'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_c16e8.dir/build.make:98: recipe for target 'cmTC_c16e8' failed
+make[4]: *** [cmTC_c16e8] Error 1
+make[4]: Leaving directory '/home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-kHIM9F'
+Makefile:127: recipe for target 'cmTC_c16e8/fast' failed
+make[3]: *** [cmTC_c16e8/fast] Error 2
+make[3]: Leaving directory '/home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-kHIM9F'
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-d7jTRo
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_a4c7f/fast && make[3]: Entering directory '/home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-d7jTRo'
+/usr/bin/make  -f CMakeFiles/cmTC_a4c7f.dir/build.make CMakeFiles/cmTC_a4c7f.dir/build
+make[4]: Entering directory '/home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-d7jTRo'
+Building C object CMakeFiles/cmTC_a4c7f.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -o CMakeFiles/cmTC_a4c7f.dir/CheckFunctionExists.c.o -c /home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-d7jTRo/CheckFunctionExists.c
+Linking C executable cmTC_a4c7f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4c7f.dir/link.txt --verbose=1
+/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_a4c7f.dir/CheckFunctionExists.c.o -o cmTC_a4c7f  -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_a4c7f.dir/build.make:98: recipe for target 'cmTC_a4c7f' failed
+make[4]: *** [cmTC_a4c7f] Error 1
+make[4]: Leaving directory '/home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-d7jTRo'
+Makefile:127: recipe for target 'cmTC_a4c7f/fast' failed
+make[3]: *** [cmTC_a4c7f/fast] Error 2
+make[3]: Leaving directory '/home/dmz/Baidu/convex_generation/build/gtest/src/gtest-build/CMakeFiles/CMakeScratch/TryCompile-d7jTRo'
+
+
+
